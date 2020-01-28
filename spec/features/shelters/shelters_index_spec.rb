@@ -36,9 +36,8 @@ RSpec.describe "shelters index page", type: :feature do
                                  state: 'CO',
                                  zip: '80234')
 
-      visit '/shelters/1'
+      visit "/shelters/#{shelter_1.id}"
 
-      save_and_open_page
       expect(page).to have_content(shelter_1.name)
     end
   end
