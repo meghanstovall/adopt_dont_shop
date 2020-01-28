@@ -8,13 +8,4 @@ class CreateShelter < ActiveRecord::Migration[5.1]
       t.string :zip
     end
   end
-
-
-  # def change
-  #   create_table :tasks do |t|
-  #     t.string :title
-  #     t.string :description
-  #   end
-  # end
-
 end
