@@ -22,4 +22,5 @@ ActiveRecord::Schema.define(version: 20200128151116) do
     t.string "state"
     t.string "zip"
   end
+
 end
