@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+# User story 2
 RSpec.describe "shelters index page", type: :feature do
   context 'as a visitor' do
     it "can see all shelter names" do
@@ -22,6 +23,7 @@ RSpec.describe "shelters index page", type: :feature do
   end
 end
 
+# User story 3
 RSpec.describe "shelters index page", type: :feature do
   context 'as a visitor' do
     it "can see one shelter's information" do
