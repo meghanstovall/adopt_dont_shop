@@ -4,12 +4,12 @@ require 'rails_helper'
 RSpec.describe "shelters show id page", type: :feature do
   context 'as a visitor' do
     it "can see one shelter's information" do
-      shelter_1 = Shelter.create!(name: "Mike's Shelter",
+      shelter_1 = Shelter.create(name: "Mike's Shelter",
                                  address: '1331 17th Street',
                                  city: 'Denver',
                                  state: 'CO',
                                  zip: '80202')
-      shelter_2 = Shelter.create!(name: "Meg's Shelter",
+      shelter_2 = Shelter.create(name: "Meg's Shelter",
                                  address: '150 Main Street',
                                  city: 'Hershey',
                                  state: 'PA',
@@ -31,12 +31,12 @@ end
 RSpec.describe "shelters show id page", type: :feature do
   context "as a visitor" do
     it "can update a shelter" do
-      shelter_1 = Shelter.create!(name: "Mike's Shelter",
+      shelter_1 = Shelter.create(name: "Mike's Shelter",
                                  address: '1331 17th Street',
                                  city: 'Denver',
                                  state: 'CO',
                                  zip: '80202')
-      shelter_2 = Shelter.create!(name: "Meg's Shelter",
+      shelter_2 = Shelter.create(name: "Meg's Shelter",
                                  address: '150 Main Street',
                                  city: 'Hershey',
                                  state: 'PA',
