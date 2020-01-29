@@ -27,7 +27,7 @@ RSpec.describe "shelters show id page", type: :feature do
   end
 end
 
-# USer story 5
+# User story 5
 RSpec.describe "shelters show id page", type: :feature do
   context "as a visitor" do
     it "can update a shelter" do
@@ -44,11 +44,38 @@ RSpec.describe "shelters show id page", type: :feature do
 
       visit "/shelters/#{shelter_1.id}"
 
-      click_link "Update Shelter"
+      click_on "Update Shelter"
       expect(current_path).to eq("/shelters/#{shelter_1.id}/edit")
 
-      click_button "Submit"
+      fill_in 'zip', with: "80234"
+
+      click_on "Save changes"
       expect(page).to have_content("Mike's Shelter")
+      expect(page).to have_content("Zipcode: 80234")
+    end
+  end
+end
+
+# USer story 6
+RSpec.describe "shelters show id page", type: :feature do
+  context "as a visitor" do
+    it "can delete a shelter" do
+      shelter_1 = Shelter.create(name: "Mike's Shelter",
+                                 address: '1331 17th Street',
+                                 city: 'Denver',
+                                 state: 'CO',
+                                 zip: '80202')
+      shelter_2 = Shelter.create(name: "Meg's Shelter",
+                                 address: '150 Main Street',
+                                 city: 'Hershey',
+                                 state: 'PA',
+                                 zip: '17033')
+
+      visit "/shelters/#{shelter_1.id}"
+
+      click_on "Delete"
+      expect(current_path).to eq("/shelters")
+      expect(page).to have_content("Meg's Shelter")
     end
   end
 end
