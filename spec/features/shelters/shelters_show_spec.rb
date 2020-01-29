@@ -46,6 +46,9 @@ RSpec.describe "shelters show id page", type: :feature do
 
       click_link "Update Shelter"
       expect(current_path).to eq("/shelters/#{shelter_1.id}/edit")
+
+      click_button "Submit"
+      expect(page).to have_content("Mike's Shelter")
     end
   end
 end
