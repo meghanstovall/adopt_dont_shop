@@ -76,6 +76,7 @@ RSpec.describe "shelters show id page", type: :feature do
       click_on "Delete"
       expect(current_path).to eq("/shelters")
       expect(page).to have_content("Meg's Shelter")
+      expect(page).to have_no_content("Mike's Shelter")
     end
   end
 end
