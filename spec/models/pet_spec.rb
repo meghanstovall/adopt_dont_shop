@@ -6,13 +6,13 @@ RSpec.describe Pet, type: :model do
     it {should validate_presence_of :name}
     it {should validate_presence_of :age}
     it {should validate_presence_of :sex}
-    it {should validate_presence_of :name_of_shelter}
-    it {should validate_presence_of :shelter_id}
+    # it {should validate_presence_of :name_of_shelter}
+    # it {should validate_presence_of :shelter_id}
   end
 
-  # describe "relationships" do
-  #   it {should belong_to :shelter}
-  # end
+  describe "relationships" do
+    it {should belong_to :shelter}
+  end
 
   # describe "methods" do
   #   it

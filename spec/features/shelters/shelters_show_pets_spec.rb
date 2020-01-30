@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 # User story 7
-RSpec.describe "pets index page", type: :feature do
+RSpec.describe "shelters id pets page", type: :feature do
   context "as a visitor" do
-    it "can see all pet names" do
+    it "can see all Pets for that shelter and the shelter id" do
       shelter_1 = Shelter.create(name: "Mike's Shelter",
                                  address: '1331 17th Street',
                                  city: 'Denver',
@@ -14,19 +14,18 @@ RSpec.describe "pets index page", type: :feature do
                                  city: 'Hershey',
                                  state: 'PA',
                                  zip: '17033')
-      pet = Pet.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+      pet_1 = Pet.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                         name: "Ozzie",
                         age: "6",
                         sex: "Male")
+      pet_2 = Pet.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                        name: "Harley",
+                        age: "2",
+                        sex: "Male")
 
-      visit '/pets'
+      visit '/shelters/:shelter_id/pets'
 
-      expect(page).to have_content("All Pets")
-      expect(page).to have_content(pet.name)
-      expect(page).to have_css("img[src*='#{pet.image}']")
-      expect(page).to have_content(pet.age)
-      expect(page).to have_content(pet.sex)
-      expect(page).to have_content(pet.shelter.name)
+      expect(page).to have_content("Our Pets")
     end
   end
 end
