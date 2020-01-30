@@ -16,7 +16,11 @@ ActiveRecord::Schema.define(version: 20200130001800) do
   enable_extension "plpgsql"
 
   create_table "pets", force: :cascade do |t|
+    t.string "image"
     t.string "name"
+    t.string "approximate_age"
+    t.string "sex"
+    t.string "name_of_shelter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,6 +31,8 @@ ActiveRecord::Schema.define(version: 20200130001800) do
     t.string "city"
     t.string "state"
     t.string "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
