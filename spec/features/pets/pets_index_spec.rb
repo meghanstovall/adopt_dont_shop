@@ -14,18 +14,19 @@ RSpec.describe "pets index page", type: :feature do
                                  city: 'Hershey',
                                  state: 'PA',
                                  zip: '17033')
-      pet = Pet.create(image: "link",
+      pet = Pet.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                         name: "Ozzie",
-                        approximate_age: "6",
+                        age: "6",
                         sex: "Male",
-                        name_of_shelter: "Mike's Shelter")
+                        name_of_shelter: "Mike's Shelter",
+                        shelter_id: shelter_1.id)
 
       visit '/pets'
 
       expect(page).to have_content("All Pets")
       expect(page).to have_content(pet.name)
       expect(page).to have_content(pet.image)
-      expect(page).to have_content(pet.approximate_age)
+      expect(page).to have_content(pet.age)
       expect(page).to have_content(pet.sex)
       expect(page).to have_content(pet.name_of_shelter)
     end
