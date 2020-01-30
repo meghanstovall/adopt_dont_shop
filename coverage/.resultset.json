@@ -216,6 +216,7 @@
           1,
           null,
           1,
+          1,
           null
         ]
       },
@@ -304,7 +305,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/features/shelters/shelters_show_pets_spec.rb": {
+      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/features/shelters/shelters_pets_spec.rb": {
         "lines": [
           1,
           null,
@@ -326,14 +327,22 @@
           null,
           null,
           null,
-          1,
-          null,
-          null,
-          null,
           null,
           1,
           null,
-          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -536,7 +545,12 @@
           1,
           null,
           1,
+          2,
           1,
+          1,
+          null,
+          1,
+          null,
           null,
           null,
           1,
@@ -552,6 +566,10 @@
           null,
           0,
           null,
+          0,
+          null,
+          null,
+          1,
           0,
           null,
           null
@@ -590,7 +608,7 @@
           null,
           null,
           1,
-          4,
+          5,
           null,
           null,
           1,
@@ -619,6 +637,6 @@
         ]
       }
     },
-    "timestamp": 1580418258
+    "timestamp": 1580425516
   }
 }

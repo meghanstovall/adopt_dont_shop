@@ -1,9 +1,13 @@
-<h1>All Pets</h1>
+<% if @shelter %>
+  <h1> <%= "#{@shelter.name}'s Pets" %> </h1>
+  <h2>Shelter ID: <%=@shelter.id%></h2>
+<% else %>
+  <h1>All Pets</h1>
+<% end %>
 
 <% @pets.each do |pet| %>
-  <h3><%=pet.name%></h3>
   <img src="<%=pet.image%>">
+  <h2><%=pet.name%></h2>
   <p>Age: <%=pet.age%></p>
   <p>Sex: <%=pet.sex%></p>
-  <p>Shelter: <%=pet.name_of_shelter%></p>
 <% end %>

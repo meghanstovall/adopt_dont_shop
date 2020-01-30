@@ -17,7 +17,8 @@ RSpec.describe "pets index page", type: :feature do
       pet = Pet.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                         name: "Ozzie",
                         age: "6",
-                        sex: "Male")
+                        sex: "Male",
+                        shelter_id: shelter_1.id)
 
       visit '/pets'
 
