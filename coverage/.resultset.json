@@ -231,58 +231,6 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/controllers/welcome_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/features/pets/pets_index_spec.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/features/shelters/shelters_index_spec.rb": {
         "lines": [
           1,
@@ -473,7 +421,26 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/models/shelter.rb": {
+      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/models/pet_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/models/pet.rb": {
         "lines": [
           1,
           null,
@@ -487,7 +454,26 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/models/pet.rb": {
+      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/models/shelter_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/models/shelter.rb": {
         "lines": [
           1,
           null,
@@ -504,6 +490,13 @@
           null,
           1,
           null,
+          null
+        ]
+      },
+      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
           null
         ]
       },
@@ -562,6 +555,6 @@
         ]
       }
     },
-    "timestamp": 1580358832
+    "timestamp": 1580359685
   }
 }
