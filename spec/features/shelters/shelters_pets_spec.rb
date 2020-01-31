@@ -77,6 +77,29 @@ RSpec.describe "shelters id pets page", type: :feature do
 
       click_link "Create Pet"
       expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/new")
+
+      expect(page).to have_content("New Pet info")
+      expect(page).to have_content("Link to Image")
+      expect(page).to have_content("Name:")
+      expect(page).to have_content("Description")
+      expect(page).to have_content("Age:")
+      expect(page).to have_content("Sex:")
+      expect(page).to have_content("Status:")
+
+      fill_in 'image', with: "https://image.shutterstock.com/image-photo/dog-jack-russell-terrier-on-600w-1510303826.jpg"
+      fill_in 'name', with: "Duece"
+      fill_in 'description', with: "Boxer runt"
+      fill_in 'age', with: "8"
+      fill_in 'sex', with: "Male"
+      fill_in 'status', with: "pending"
+
+      click_button "Create Pet"
+      new_pet = Pet.last
+
+      expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
+      expect(page).to have_css("img[src*='#{new_pet.image}']")
+      expect(page).to have_content("Age: #{new_pet.age}")
+      expect(page).to have_content("Sex: #{new_pet.sex}")
     end
   end
 end

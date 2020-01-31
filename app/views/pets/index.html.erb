@@ -10,5 +10,9 @@
   <h2><a href="/pets/<%= pet.id %>"><%=pet.name%></a></h2>
   <p>Age: <%=pet.age%></p>
   <p>Sex: <%=pet.sex%></p>
-  <p>Shelter: <%=pet.shelter.name%></p><br><br><br>
+  <p>Shelter: <%=pet.shelter.name%></p><br><br>
 <% end %>
+
+<% if @shelter %>
+ <h3><a href="/shelters/<%=@shelter.id%>/pets/new">Create Pet</h3>
+<%end%>
