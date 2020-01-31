@@ -45,3 +45,49 @@ RSpec.describe "pets show page", type: :feature do
     end
   end
 end
+
+# User story 11
+RSpec.describe "pets show page", type: :feature do
+  context 'as a visitor' do
+    it "can update a pet" do
+      shelter_1 = Shelter.create(name: "Mike's Shelter",
+                                 address: '1331 17th Street',
+                                 city: 'Denver',
+                                 state: 'CO',
+                                 zip: '80202')
+      shelter_2 = Shelter.create(name: "Meg's Shelter",
+                                 address: '150 Main Street',
+                                 city: 'Hershey',
+                                 state: 'PA',
+                                 zip: '17033')
+      pet_1 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                                     name: "Ozzie",
+                                     age: "6",
+                                     sex: "Male",
+                                     shelter_id: shelter_1.id,
+                                     description: "playful",
+                                     status: "adoptable")
+      pet_2 = shelter_2.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                                     name: "Harley",
+                                     age: "2",
+                                     sex: "Male",
+                                     shelter_id: shelter_2.id,
+                                     description: "good dog",
+                                     status: "pending")
+
+
+      visit "/pets/#{pet_1.id}"
+
+      click_link "Update Pet"
+      expect(current_path).to eq("/pets/#{pet_1.id}/edit")
+
+      fill_in 'age', with: "7"
+      fill_in 'description', with: "lazy"
+
+      click_on "Save changes"
+      expect(current_path).to eq("/pets/#{pet_1.id}")
+      expect(page).to have_content("Age: 7")
+      expect(page).to have_content("Description: lazy")
+    end
+  end
+end

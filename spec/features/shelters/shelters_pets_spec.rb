@@ -100,6 +100,7 @@ RSpec.describe "shelters id pets page", type: :feature do
       expect(page).to have_css("img[src*='#{new_pet.image}']")
       expect(page).to have_content("Age: #{new_pet.age}")
       expect(page).to have_content("Sex: #{new_pet.sex}")
+      expect(page).to have_content("Shelter: #{shelter_1.name}")
     end
   end
 end
