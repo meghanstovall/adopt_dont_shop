@@ -91,3 +91,51 @@ RSpec.describe "pets show page", type: :feature do
     end
   end
 end
+
+# User story 12
+RSpec.describe "shelters show page", type: :feature do
+  context "as a visitor" do
+    it "can delete a pet" do
+      shelter_1 = Shelter.create(name: "Mike's Shelter",
+                                 address: '1331 17th Street',
+                                 city: 'Denver',
+                                 state: 'CO',
+                                 zip: '80202')
+      shelter_2 = Shelter.create(name: "Meg's Shelter",
+                                 address: '150 Main Street',
+                                 city: 'Hershey',
+                                 state: 'PA',
+                                 zip: '17033')
+      pet_1 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                                     name: "Ozzie",
+                                     age: "6",
+                                     sex: "Male",
+                                     shelter_id: shelter_1.id,
+                                     description: "playful",
+                                     status: "adoptable")
+      pet_2 = shelter_2.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                                     name: "Harley",
+                                     age: "2",
+                                     sex: "Male",
+                                     shelter_id: shelter_2.id,
+                                     description: "good dog",
+                                     status: "pending")
+      pet_3 = shelter_2.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                                     name: "Duece",
+                                     age: "4",
+                                     sex: "Female",
+                                     shelter_id: shelter_2.id,
+                                     description: "old",
+                                     status: "pending")
+
+      visit "/pets/#{pet_1.id}"
+
+      click_link "Delete Pet"
+      expect(current_path).to eq("/pets")
+      expect(current_path).to have_no_content(pet_3.image)
+      expect(current_path).to have_no_content(pet_3.name)
+      expect(current_path).to have_no_content(pet_3.age)
+      expect(current_path).to have_no_content(pet_3.sex)
+    end
+  end
+end

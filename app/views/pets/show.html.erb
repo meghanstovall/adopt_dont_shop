@@ -9,4 +9,8 @@
 <p>Sex: <%= @pet.sex %></p>
 <p>Status: <%= @pet.status %></p>
 
-<a href="/pets/<%=@pet.id%>/edit">Update Pet</a>
+<a href="/pets/<%=@pet.id%>/edit">Update Pet</a><br>
+
+<%= form_tag "/pets/#{@pet.id}", method: :delete do %>
+  <%= submit_tag(value="Delete Pet") %>
+<% end %>
