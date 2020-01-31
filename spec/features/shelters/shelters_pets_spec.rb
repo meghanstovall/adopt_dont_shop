@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-# User story 7
+# User story 8
 RSpec.describe "shelters id pets page", type: :feature do
   context "as a visitor" do
     it "can see all Pets for that shelter and the shelter id" do

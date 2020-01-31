@@ -17,7 +17,9 @@ class PetsController < ApplicationController
       name: params[:name],
       image: params[:image],
       age: params[:age],
-      sex: params[:sex]
+      sex: params[:sex],
+      description: params[:description],
+      status: params[:status]
       })
 
       pet.save
