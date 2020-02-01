@@ -69,3 +69,42 @@ RSpec.describe "pets index page", method: :feature do
     end
   end
 end
+
+# User story 16
+RSpec.describe "pets index page", method: :feature do
+  context "as a visitor" do
+    it "can delete any pet" do
+      shelter_1 = Shelter.create(name: "Mike's Shelter",
+                                 address: '1331 17th Street',
+                                 city: 'Denver',
+                                 state: 'CO',
+                                 zip: '80202')
+      shelter_2 = Shelter.create(name: "Meg's Shelter",
+                                 address: '150 Main Street',
+                                 city: 'Hershey',
+                                 state: 'PA',
+                                 zip: '17033')
+      pet_1 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                        name: "Ozzie",
+                        age: "6",
+                        sex: "Male",
+                        shelter_id: shelter_1.id,
+                        description: "Good boy",
+                        status: "pending")
+      pet_2 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                        name: "Harley",
+                        age: "2",
+                        sex: "Female",
+                        shelter_id: shelter_1.id,
+                        description: "puppy",
+                        status: "adoptable")
+
+      visit '/pets'
+
+      within "#pet-#{pet_1.id}" do
+        click_link "Delete Pet"
+      end
+      expect(current_path).to eq("/pets")
+    end
+  end
+end
