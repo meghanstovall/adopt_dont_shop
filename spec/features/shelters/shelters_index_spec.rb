@@ -114,7 +114,7 @@ RSpec.describe "shelters index page", method: :feature do
       visit "/shelters"
 
       within "#shelter-#{shelter_1.id}" do
-        click_link "Delete Shelter"
+        click_on "Delete Shelter"
       end
       expect(current_path).to eq("/shelters")
     end

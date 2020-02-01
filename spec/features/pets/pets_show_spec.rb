@@ -18,14 +18,12 @@ RSpec.describe "pets show page", type: :feature do
                                      name: "Ozzie",
                                      age: "6",
                                      sex: "Male",
-                                     shelter_id: shelter_1.id,
                                      description: "playful",
                                      status: "adoptable")
       pet_2 = shelter_2.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                                      name: "Harley",
                                      age: "2",
                                      sex: "Male",
-                                     shelter_id: shelter_2.id,
                                      description: "good dog",
                                      status: "pending")
 
@@ -64,14 +62,12 @@ RSpec.describe "pets show page", type: :feature do
                                      name: "Ozzie",
                                      age: "6",
                                      sex: "Male",
-                                     shelter_id: shelter_1.id,
                                      description: "playful",
                                      status: "adoptable")
       pet_2 = shelter_2.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                                      name: "Harley",
                                      age: "2",
                                      sex: "Male",
-                                     shelter_id: shelter_2.id,
                                      description: "good dog",
                                      status: "pending")
 
@@ -110,21 +106,18 @@ RSpec.describe "shelters show page", type: :feature do
                                      name: "Ozzie",
                                      age: "6",
                                      sex: "Male",
-                                     shelter_id: shelter_1.id,
                                      description: "playful",
                                      status: "adoptable")
       pet_2 = shelter_2.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                                      name: "Harley",
                                      age: "2",
                                      sex: "Male",
-                                     shelter_id: shelter_2.id,
                                      description: "good dog",
                                      status: "pending")
       pet_3 = shelter_2.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                                      name: "Duece",
                                      age: "4",
                                      sex: "Female",
-                                     shelter_id: shelter_2.id,
                                      description: "old",
                                      status: "pending")
 
@@ -132,7 +125,7 @@ RSpec.describe "shelters show page", type: :feature do
 
       click_on "Delete Pet"
       expect(current_path).to eq("/pets")
-      
+
       expect(current_path).to have_no_content(pet_3.image)
       expect(current_path).to have_no_content(pet_3.name)
       expect(current_path).to have_no_content(pet_3.age)

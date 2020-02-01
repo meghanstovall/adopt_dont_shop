@@ -18,14 +18,12 @@ RSpec.describe "shelters id pets page", type: :feature do
                         name: "Ozzie",
                         age: "6",
                         sex: "Male",
-                        shelter_id: shelter_1.id,
                         description: "Very cuddly",
                         status: "pending")
       pet_2 = shelter_2.pets.create!(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                         name: "Harley",
                         age: "2",
                         sex: "Male",
-                        shelter_id: shelter_2.id,
                         description: "Playful",
                         status: "adoptable")
 
@@ -62,14 +60,12 @@ RSpec.describe "shelters id pets page", type: :feature do
                         name: "Ozzie",
                         age: "6",
                         sex: "Male",
-                        shelter_id: shelter_1.id,
                         description: "Very cuddly",
                         status: "pending")
       pet_2 = shelter_2.pets.create!(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                         name: "Harley",
                         age: "2",
                         sex: "Male",
-                        shelter_id: shelter_2.id,
                         description: "Playful",
                         status: "adoptable")
 

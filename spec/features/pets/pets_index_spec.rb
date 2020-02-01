@@ -18,7 +18,6 @@ RSpec.describe "pets index page", type: :feature do
                         name: "Ozzie",
                         age: "6",
                         sex: "Male",
-                        shelter_id: shelter_1.id,
                         description: "Good boy",
                         status: "pending")
 
@@ -49,14 +48,12 @@ RSpec.describe "pets index page", method: :feature do
                         name: "Ozzie",
                         age: "6",
                         sex: "Male",
-                        shelter_id: shelter_1.id,
                         description: "Good boy",
                         status: "pending")
       pet_2 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                         name: "Harley",
                         age: "2",
                         sex: "Female",
-                        shelter_id: shelter_1.id,
                         description: "puppy",
                         status: "adoptable")
 
@@ -88,14 +85,12 @@ RSpec.describe "pets index page", method: :feature do
                         name: "Ozzie",
                         age: "6",
                         sex: "Male",
-                        shelter_id: shelter_1.id,
                         description: "Good boy",
                         status: "pending")
       pet_2 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                         name: "Harley",
                         age: "2",
                         sex: "Female",
-                        shelter_id: shelter_1.id,
                         description: "puppy",
                         status: "adoptable")
 
@@ -127,14 +122,12 @@ RSpec.describe "pets index page", method: :feature do
                         name: "Ozzie",
                         age: "6",
                         sex: "Male",
-                        shelter_id: shelter_1.id,
                         description: "Good boy",
                         status: "pending")
       pet_2 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                         name: "Harley",
                         age: "2",
                         sex: "Female",
-                        shelter_id: shelter_1.id,
                         description: "puppy",
                         status: "adoptable")
 
