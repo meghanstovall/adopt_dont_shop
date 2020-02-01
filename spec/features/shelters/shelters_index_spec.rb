@@ -62,3 +62,36 @@ RSpec.describe "shelters index page", type: :feature do
     end
   end
 end
+
+# User story 13
+RSpec.describe "shelters index page", type: :feature do
+  context "as a visitor" do
+    it "can see link next to each shelter to update" do
+      shelter_1 = Shelter.create(name: "Mike's Shelter",
+                                 address: '1331 17th Street',
+                                 city: 'Denver',
+                                 state: 'CO',
+                                 zip: '80202')
+      shelter_2 = Shelter.create(name: "Meg's Shelter",
+                                 address: '150 Main Street',
+                                 city: 'Hershey',
+                                 state: 'PA',
+                                 zip: '17033')
+
+      visit "/shelters"
+
+      within "#shelter-#{shelter_1.id}" do
+        click_link "Update Shelter"
+      end
+      expect(current_path).to eq("/shelters/#{shelter_1.id}/edit")
+
+      fill_in 'state', with: 'CO'
+      fill_in 'zip', with: '80020'
+
+      click_on "Save changes"
+      expect(current_path).to eq("/shelters/#{shelter_1.id}")
+      expect(page).to have_content("State: CO")
+      expect(page).to have_content("Zipcode: 80020")
+    end
+  end
+end
