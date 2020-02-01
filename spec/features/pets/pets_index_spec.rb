@@ -133,6 +133,7 @@ RSpec.describe "pets index page", method: :feature do
 
       visit '/pets'
 
+      save_and_open_page
       within "#pet-#{pet_1.id}" do
         click_link "#{shelter_1.name}"
       end
