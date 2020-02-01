@@ -102,7 +102,7 @@ RSpec.describe "pets index page", method: :feature do
       visit '/pets'
 
       within "#pet-#{pet_1.id}" do
-        click_link "Delete Pet"
+        click_on "Delete Pet"
       end
       expect(current_path).to eq("/pets")
     end

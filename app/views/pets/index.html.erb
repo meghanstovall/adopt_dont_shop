@@ -13,7 +13,12 @@
     <p>Age: <%=pet.age%></p>
     <p>Sex: <%=pet.sex%></p>
     <h5><a href="/pets/<%=pet.id%>/edit">Update Pet</h5>
-    <h5><a href="/pets">Delete Pet</h5><br><br>
+
+    <%= form_tag "/pets/#{pet.id}", method: :delete do %>
+      <%= submit_tag(value="Delete Pet") %>
+    <% end %>
+    <br>
+    <br>
   </section>
 <% end %>
 

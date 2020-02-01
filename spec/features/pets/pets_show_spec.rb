@@ -132,6 +132,7 @@ RSpec.describe "shelters show page", type: :feature do
 
       click_on "Delete Pet"
       expect(current_path).to eq("/pets")
+      
       expect(current_path).to have_no_content(pet_3.image)
       expect(current_path).to have_no_content(pet_3.name)
       expect(current_path).to have_no_content(pet_3.age)
