@@ -9,7 +9,7 @@
   <section class="grid-pet" id="pet-<%=pet.id%>">
     <img src="<%=pet.image%>"><br>
     <h2>Name: <a href="/pets/<%= pet.id %>"><%=pet.name%></a></h2>
-    <h5><a href="/shelters/<%=pet.shelter.id%>"><%=pet.shelter.name%></a></h5>
+    <h5>Shelter: <a href="/shelters/<%=pet.shelter.id%>"><%=pet.shelter.name%></a></h5>
     <p>Age: <%=pet.age%></p>
     <p>Sex: <%=pet.sex%></p>
     <h5><a href="/pets/<%=pet.id%>/edit">Update Pet</h5>

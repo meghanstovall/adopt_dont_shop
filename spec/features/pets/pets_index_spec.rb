@@ -3,7 +3,7 @@ require 'rails_helper'
 # User story 7
 RSpec.describe "pets index page", type: :feature do
   context "as a visitor" do
-    it "can see all pet names" do
+    it "can see all pets" do
       shelter_1 = Shelter.create(name: "Mike's Shelter",
                                  address: '1331 17th Street',
                                  city: 'Denver',
@@ -23,10 +23,11 @@ RSpec.describe "pets index page", type: :feature do
 
       visit '/pets'
 
+      expect(page).to have_content("Name: #{pet.name}")
       expect(page).to have_css("img[src*='#{pet.image}']")
       expect(page).to have_content("#{pet.age}")
       expect(page).to have_content("#{pet.sex}")
-      expect(page).to have_content("#{pet.shelter.name}")
+      expect(page).to have_content("Shelter: #{pet.shelter.name}")
     end
   end
 end
@@ -133,7 +134,6 @@ RSpec.describe "pets index page", method: :feature do
 
       visit '/pets'
 
-      save_and_open_page
       within "#pet-#{pet_1.id}" do
         click_link "#{shelter_1.name}"
       end
