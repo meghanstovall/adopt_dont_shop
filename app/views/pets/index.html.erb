@@ -9,11 +9,11 @@
   <section class="grid-pet" id="pet-<%=pet.id%>">
     <img src="<%=pet.image%>"><br>
     <h2><a href="/pets/<%= pet.id %>"><%=pet.name%></a></h2>
+    <h5><a href="/shelters/<%=pet.shelter.id%>"><%=pet.shelter.name%></a></h5>
     <p>Age: <%=pet.age%></p>
     <p>Sex: <%=pet.sex%></p>
-    <p>Shelter: <%=pet.shelter.name%></p>
-    <h4><a href="/pets/<%=pet.id%>/edit">Update Pet</h4><br><br>
-    <h4><a href="/pets">Delete Pet</h4><br><br>
+    <h5><a href="/pets/<%=pet.id%>/edit">Update Pet</h5>
+    <h5><a href="/pets">Delete Pet</h5><br><br>
   </section>
 <% end %>
 

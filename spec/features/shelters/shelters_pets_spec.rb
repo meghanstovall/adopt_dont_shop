@@ -34,6 +34,7 @@ RSpec.describe "shelters id pets page", type: :feature do
       click_link "Pets"
       expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
 
+      save_and_open_page
       expect(page).to have_content("#{shelter_1.name}'s Pets")
       expect(page).to have_content("Shelter ID: #{shelter_1.id}")
       expect(page).to have_css("img[src*='#{pet_1.image}']")
@@ -100,7 +101,7 @@ RSpec.describe "shelters id pets page", type: :feature do
       expect(page).to have_css("img[src*='#{new_pet.image}']")
       expect(page).to have_content("Age: #{new_pet.age}")
       expect(page).to have_content("Sex: #{new_pet.sex}")
-      expect(page).to have_content("Shelter: #{shelter_1.name}")
+      expect(page).to have_content("#{shelter_1.name}")
     end
   end
 end
