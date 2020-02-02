@@ -1,5 +1,5 @@
 <%= form_tag("/pets/#{@pet.id}", method: :patch) do %>
-  <%= label_tag 'Edit' %>
+  <h1>Edit</h1>
   <%= text_field_tag 'image', @pet.image, :required => true %><br/>
   <%= text_field_tag 'name', @pet.name, :required => true %><br/>
   <%= text_field_tag 'description', @pet.description, :required => true %><br/>
